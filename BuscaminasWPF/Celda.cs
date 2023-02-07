@@ -11,7 +11,7 @@ namespace BuscaminasWPF
 {
     public class Celda : INotifyPropertyChanged
     {
-        #region Attributes
+        #region Atributos
         int row;
         int column;
         string text;
@@ -21,7 +21,7 @@ namespace BuscaminasWPF
         Visibility showQuestion = Visibility.Hidden;
         #endregion
 
-        #region Properties
+        #region Get y Set
         public string Text
         {
             get { return text; }

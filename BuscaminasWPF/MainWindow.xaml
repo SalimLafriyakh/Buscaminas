@@ -1,24 +1,28 @@
 ﻿<Window x:Class="BuscaminasWPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="BUSCAMINAS BY SALIM" Height="500" Width="500" WindowStartupLocation="CenterScreen" Icon="Images/bomb.png">
+        Title="BUSCAMINAS BY SALIM" Height="400" Width="400" WindowStartupLocation="CenterScreen" Icon="Images/bomb.png">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="78*" />
             <RowDefinition Height="233*" />
         </Grid.RowDefinitions>
-        <Canvas Grid.RowSpan="1" Height="Auto" HorizontalAlignment="Stretch" Margin="0" Name="canvas1" VerticalAlignment="Stretch" Width="Auto">
+        <Canvas Grid.RowSpan="1" Height="100" HorizontalAlignment="Stretch" Margin="0" Name="canvas1" VerticalAlignment="Stretch" Width="auto">
             <Label Canvas.Left="6" Canvas.Top="6" Content="Minas" Height="28" Name="label1" />
-            <TextBox Canvas.Left="72" Canvas.Top="8" Height="23" Name="txtMinas" Width="70" Text="{Binding NumMinas}" />
-            <Button Canvas.Left="3" Canvas.Top="45" Content="Play" Height="35" Name="button1" Width="150"  Command="{Binding ClickCommand}" />
+            <TextBox Canvas.Left="72" Canvas.Top="8" Height="28" Name="txtMinas" Width="70" Text="{Binding NumMinas}" />
+            <Button Canvas.Left="3" Canvas.Top="45" Content="Jugar" Height="35" Name="button1" Width="150"  Command="{Binding ClickCommand}" />
         </Canvas>
-        <Grid Grid.Row="1" Background="Azure">
-        <ItemsControl Grid.Row="0" ItemsSource="{Binding Celdas}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="1" Background="Aquamarine" MinHeight="20" MinWidth="20">
+        <Grid Grid.Row="1" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="181*"/>
+                <ColumnDefinition Width="319*"/>
+            </Grid.ColumnDefinitions>
+            <ItemsControl Grid.Row="0" ItemsSource="{Binding Celdas}" Grid.ColumnSpan="2">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="1" Background="Gray" MinHeight="20" MinWidth="20">
                             <Grid Grid.Row="0">
-                                <Button Content="{Binding Text}" Background="Aquamarine">
+                                <Button Content="{Binding Text}" Background="Gray">
                                     <Button.InputBindings>
                                         <MouseBinding Gesture="LeftClick" 
                                                       Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.LeftClickCommand}"
@@ -45,8 +49,8 @@
                                 </Image>
                             </Grid>
                         </Grid>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <UniformGrid Rows="{Binding NumDificultad}" Columns="{Binding NumDificultad}"></UniformGrid>
