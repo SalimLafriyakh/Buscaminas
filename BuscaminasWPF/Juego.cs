@@ -10,9 +10,10 @@ using System.ComponentModel;
 
 namespace BuscaminasWPF
 {
-    class ViewModelBase : INotifyPropertyChanged
+    class Juego : INotifyPropertyChanged
     {
         #region Atributos
+
         int numMinas = 10;
         int numDificultad = 10;
         List<Celda> celdas;
@@ -20,7 +21,7 @@ namespace BuscaminasWPF
 
         #region Constructor
 
-        public ViewModelBase()
+        public Juego()
         {
             
         }

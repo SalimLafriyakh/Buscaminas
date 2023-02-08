@@ -22,7 +22,7 @@ namespace BuscaminasWPF
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new ViewModelBase();
+            DataContext = new Juego();
         }
 
         private void ChangeText(object sender, RoutedEventArgs e)
