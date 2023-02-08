@@ -8,7 +8,7 @@ using System.Data;
 using System.Collections;
 using System.ComponentModel;
 
-namespace BuscaminasWPF
+namespace Buscaminas
 {
     class Juego : INotifyPropertyChanged
     {
