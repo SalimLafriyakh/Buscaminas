@@ -5,7 +5,7 @@ Usando c# y .NET pensado para el entretenimiento.
 
 El usuario puede seleccionar numero de minas.
 
-Recibireis mas ayuda visitando nuestra web: https://salimlaf.odoo.com/@/
+Recibireis mas ayuda visitando nuestra web: https://salimlaf.odoo.com/
 
 -------------------------------------------------------------
 
