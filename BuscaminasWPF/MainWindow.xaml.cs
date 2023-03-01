@@ -16,7 +16,7 @@ namespace Buscaminas
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /// </summary> ss
     public partial class MainWindow : Window
     {
         public MainWindow()
