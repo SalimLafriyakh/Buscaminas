@@ -51,6 +51,7 @@ namespace Buscaminas
             }
         }
 
+        //Contador
         public int Contador
         {
             get { return contador; }
