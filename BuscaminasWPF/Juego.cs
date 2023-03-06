@@ -16,6 +16,7 @@ namespace Buscaminas
 
         int numMinas = 10;
         int numDificultad = 10;
+        int contador = 0;
         List<Celda> celdas;
         #endregion
 
@@ -49,7 +50,17 @@ namespace Buscaminas
                 RaisePropertyChanged("NumDificultad");
             }
         }
-               
+
+        public int Contador
+        {
+            get { return contador; }
+            set
+            {
+                contador = value;
+                RaisePropertyChanged("Contador");
+            }
+        }
+
 
         public List<Celda> Celdas
         {
@@ -133,13 +144,17 @@ namespace Buscaminas
 
         public void MyActionRightClick(Celda c)
         {
+            
+
             if (c.ShowFlag == Visibility.Hidden && c.ShowQuestion == Visibility.Hidden)
             {
                 c.ShowFlag = Visibility.Visible;
+                Contador++;
             }
             else if (c.ShowFlag == Visibility.Visible)
             {
                 c.ShowFlag = Visibility.Hidden;
+                Contador--;
                 c.ShowQuestion = Visibility.Visible;
             }
             else if (c.ShowQuestion == Visibility.Visible)
