@@ -16,7 +16,7 @@ namespace Buscaminas
 
         int numMinas = 10;
         int numDificultad = 10;
-        int contador = 0;
+        int contador;
         List<Celda> celdas;
         #endregion
 
@@ -24,7 +24,8 @@ namespace Buscaminas
 
         public Juego()
         {
-            
+
+            contador = numMinas;
         }
         #endregion
         
@@ -145,17 +146,18 @@ namespace Buscaminas
 
         public void MyActionRightClick(Celda c)
         {
+
             
 
             if (c.ShowFlag == Visibility.Hidden && c.ShowQuestion == Visibility.Hidden)
             {
                 c.ShowFlag = Visibility.Visible;
-                Contador++;
+                Contador--;
             }
             else if (c.ShowFlag == Visibility.Visible)
             {
                 c.ShowFlag = Visibility.Hidden;
-                Contador--;
+                Contador++;
                 c.ShowQuestion = Visibility.Visible;
             }
             else if (c.ShowQuestion == Visibility.Visible)
@@ -168,6 +170,7 @@ namespace Buscaminas
         #region Metodos
         private void NuevoJuego()
         {
+            contador = numMinas;
             List<Celda> lstCeldas = new List<Celda>();
             for (int i = 0; i < NumDificultad; i++)
                 for (int j = 0; j < NumDificultad; j++)
